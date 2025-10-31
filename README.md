@@ -1,16 +1,15 @@
 # UE_Machine-Learning
- Assignments
 
-Here is a detailed report formatted as a README.md file, ready to be uploaded to your GitHub repository alongside your code.
+ Assignments - 1 
 
 ML Classification Algorithms from Scratch
 This project implements three fundamental machine learning classification algorithms from scratch using NumPy:
 
-Perceptron
+1. Perceptron
 
-Logistic Regression
+2. Logistic Regression
 
-Simple Neural Network (with one hidden layer)
+3. Simple Neural Network (with one hidden layer)
 
 The purpose of this project is to demonstrate a foundational understanding of these models, their internal mechanics, and their implementation without relying on high-level libraries like Scikit-learn (which is used here only for data preprocessing).
 
@@ -24,6 +23,7 @@ Preprocessing Included: The script includes standard data preparation steps: tra
 Comparative: All three models are trained and tested on the same dataset for a direct accuracy comparison.
 
 📂 Project Structure
+
 A simple file structure is expected:
 
 your-repository-name/
@@ -31,6 +31,7 @@ your-repository-name/
 ├── data.csv            # Your dataset (MUST be named this)
 ├── main.py             # Your Python script
 └── README.md           # This file
+
 🛠️ Getting Started
 Follow these instructions to get a copy of the project up and running on your local machine.
 
@@ -60,7 +61,9 @@ Then, install them using pip:
 Bash
 
 pip install -r requirements.txt
+
 🏃 Usage
+
 To run the project, you must have your dataset in the root folder.
 
 Add Your Data:
