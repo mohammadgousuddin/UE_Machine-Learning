@@ -1,2 +1,153 @@
 # UE_Machine-Learning
  Assignments
+
+Here is a detailed report formatted as a README.md file, ready to be uploaded to your GitHub repository alongside your code.
+
+ML Classification Algorithms from Scratch
+This project implements three fundamental machine learning classification algorithms from scratch using NumPy:
+
+Perceptron
+
+Logistic Regression
+
+Simple Neural Network (with one hidden layer)
+
+The purpose of this project is to demonstrate a foundational understanding of these models, their internal mechanics, and their implementation without relying on high-level libraries like Scikit-learn (which is used here only for data preprocessing).
+
+🚀 Features
+Object-Oriented: Each algorithm is built as a self-contained Python class (Perceptron, LogisticRegression, SimpleNeuralNetwork).
+
+From Scratch: Core logic, including activation functions, update rules, and backpropagation, is implemented using only NumPy.
+
+Preprocessing Included: The script includes standard data preparation steps: train-test splitting and feature scaling.
+
+Comparative: All three models are trained and tested on the same dataset for a direct accuracy comparison.
+
+📂 Project Structure
+A simple file structure is expected:
+
+your-repository-name/
+│
+├── data.csv            # Your dataset (MUST be named this)
+├── main.py             # Your Python script
+└── README.md           # This file
+🛠️ Getting Started
+Follow these instructions to get a copy of the project up and running on your local machine.
+
+Prerequisites
+You will need Python 3 and the following libraries:
+
+numpy
+
+pandas
+
+scikit-learn
+
+Installation
+Clone the repository:
+
+Bash
+
+git clone https://github.com/your-username/your-repository-name.git
+cd your-repository-name
+Install dependencies: It's recommended to create a requirements.txt file with the following content:
+
+numpy
+pandas
+scikit-learn
+Then, install them using pip:
+
+Bash
+
+pip install -r requirements.txt
+🏃 Usage
+To run the project, you must have your dataset in the root folder.
+
+Add Your Data:
+
+Place your dataset in the project's root directory.
+
+The file must be named data.csv.
+
+The target variable (the label you want to predict) must be in a column named Result.
+
+Execute the Script: Run the Python script from your terminal:
+
+Bash
+
+python main.py
+Example Output
+The script will train all three models and print their final test accuracy:
+
+Training and evaluating models...
+Perceptron Test Accuracy: 89.10%
+Logistic Regression Test Accuracy: 91.52%
+Simple Neural Network (1 Hidden Layer) Test Accuracy: 92.44%
+(Note: Your accuracy will vary based on your data.csv file and the hyperparameters.)
+
+🔬 Algorithm Deep Dive
+This section details the implementation of each component in the script.
+
+1. Data Preprocessing
+Before any model is trained, the data goes through two crucial steps:
+
+Train-Test Split: The data is shuffled and split into a training set (80%) and a testing set (20%). This ensures the model is evaluated on data it has never seen before.
+
+Feature Scaling: StandardScaler (Z-score normalization) is applied. This scales all features to have a mean of 0 and a standard deviation of 1. This is critical for gradient-based algorithms (Logistic Regression and Neural Network) to converge efficiently.
+
+2. Algorithm 1: Perceptron
+Type: Linear Classifier
+
+Activation: Heaviside Step Function (output is 0 or 1).
+
+Training: The model is trained using the Perceptron update rule. It iterates through the dataset multiple times (n_iters). For each training sample, it makes a prediction. If the prediction is wrong, it updates the weights and bias using the formula:
+
+update = learning_rate * (true_label - predicted_label)
+
+weights = weights + update * input_features
+
+bias = bias + update
+
+3. Algorithm 2: Logistic Regression
+Type: Probabilistic Linear Classifier
+
+Activation: Sigmoid (or "Logistic") Function. This squashes the linear output to a probability between 0 and 1.
+
+
+Getty Images
+Training: The model is trained using Batch Gradient Descent.
+
+For each iteration, the model calculates the predicted probabilities for the entire training set.
+
+It calculates the gradients (derivatives) of the log-loss (binary cross-entropy) cost function with respect to the weights (dw) and bias (db).
+
+It updates the weights and bias by taking a small step in the opposite direction of the gradient:
+
+weights = weights - learning_rate * dw
+
+bias = bias - learning_rate * db
+
+4. Algorithm 3: Simple Neural Network
+Type: Non-linear Classifier
+
+Architecture: A 1-hidden-layer feedforward neural network.
+
+Input Layer: Size n_features (number of features in the data).
+
+Hidden Layer: Size hidden_nodes (a tunable hyperparameter).
+
+Output Layer: Size 1 (outputs a single probability).
+
+Activation: Uses the Sigmoid function for both the hidden layer and the output layer.
+
+Training: The model is trained using Backpropagation.
+
+Feedforward: The input data is passed forward through the network (Input -> Hidden -> Output) to generate a prediction.
+
+Calculate Output Error: The error between the predicted probability and the true label is calculated.
+
+Backpropagate Error: This error is propagated backward to calculate the "blame" or error contribution of the hidden layer.
+
+Calculate Gradients: Gradients are calculated for the output layer weights (weights_ho) and the hidden layer weights (weights_ih).
+
+Update Weights: All weights and biases in the network are updated using gradient descent, similar to Logistic Regression.
